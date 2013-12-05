@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+	<body>
+	<input type='text' id='input_u1'>
+	<button id="u1">User1</button>
+	<br>
+	<input type='text' id='input_u2'>
+	<button id="u2">User2</button>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	
+	<br>
+	<br>
+	<div id="level2">зрђ</div>
+	<br>
+	<script>
+		$('#u1').click(function() 
+	{
+		$('#level2').append('<br>user1 : '+$('#input_u1').val());
+	});
+	$('#u2').click(function() 
+	{
+		$('#level2').append('<br>user2 : '+$('#input_u2').val());
+	});
+	</script>
+	</body>
+</html>

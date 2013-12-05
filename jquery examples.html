@@ -1,0 +1,124 @@
+<html>
+<head>
+</head>
+	<body>
+	<div id="first_block" class="test_class">first_block</div>
+	<br>
+	
+	<div id="second_block">
+        <p>second block</p>
+    </div>
+	<br>
+	
+	<div id="third_block">third block</div>
+	<br>
+	
+	<button id="toggle_btn">Show/Hide</button>
+	<br>
+	
+	<div class='selector_test'>fourth block</div>
+	<br>
+        
+    <div id='stop' class='selector_test'>fifth block</div>
+	<br>
+        
+    <div class='selector_test'>sixth block</div>
+	<br>
+        
+        <p class='selector_test'></p>
+	
+	<input type='text' id='input_text'>
+	<button id='get_btn'>Console input text</button>
+	<br>
+	<br>
+	
+	<div id="level1">
+        
+        
+		<div id="level2">level2</div>
+        
+        
+	<div>
+        
+	<button id="append_btn">Append</button>
+	<button id="prepend_btn">Prepend</button>
+	
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script>
+        
+        //selector examples
+//        	
+//    $('#first_block').css('height', '40px');
+//    $('#first_block').css('width', '100px');
+//    $('#first_block').css('background-color', 'yellow');
+//	
+	
+        //chain example
+	
+//$('#first_block').css('height', '40px').css('width', '200px').css('background-color', 'yellow');
+//        
+//        
+	
+        //event example
+	
+//	$('.selector_test').click(function() {
+//		alert('clicked');
+//	});
+//	
+	   
+        //get content example, jquery element
+        
+        
+	
+//	$('#second_block').click(function() {
+//		alert($(this).html('we changed'));
+//		console.log($(this));
+//	});
+	
+	
+        //toggle example
+        
+//	
+//	$('#toggle_btn').click(function(){
+//		$('#third_block').slideToggle('slow');
+//	});
+	
+		
+        //get value example
+	
+//	$('#get_btn').click(function() {
+//		alert($('#input_text').val());
+//	});
+	
+	
+        //append example        
+        
+	
+//	$('#append_btn').click(function() {
+//		$('#level2').append('<p>append</p>');
+//	});
+//	
+	
+        //prepend example
+        
+	
+//	$('#prepend_btn').click(function() {
+//		$('#level2').prepend('<p>prepend</p>');
+//	});
+//	
+        
+        //each example
+        
+//    $('.selector_test').each(function(){
+//                             //console.log('ttttt');
+//        if($(this).is('#stop')) {
+//         $(this).css('background-color', 'red');    
+//        }
+//        else {
+//         $(this).css('background-color', 'green');    
+//        }
+//    })();
+	</script>
+	</body>
+</html>

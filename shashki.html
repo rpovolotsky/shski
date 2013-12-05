@@ -1,0 +1,143 @@
+<html>
+<head>
+</head>
+	<body>
+	<input type='integer' id='input_u1'>
+	<button id="u1">Создать</button>
+	<br>
+	<div id='l1' >
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script>
+		$('#u1').click(function() 
+		{
+			var i,j;
+			var flag=true,flag2 =true;
+			var n = $('#input_u1').val();
+			var str='<br><table border="1"><tbody>';
+			if((n<8)||(n>9)) return;
+			for (i=1;i<=n;i++)
+			{   flag2 = flag;
+				flag= ! flag;
+				str = str + '<tr>';
+				for (j=1;j<=n;j++)
+				{ 	
+					if (flag2)
+					{ 
+						str = str+'<td id="'+i+j+'" width="70" height="70" bgcolor="black" >' ;  
+						if (i<=3)  {str = str + '<img src="white.png">';}
+						else {if (n-i<3)  {str = str + '<img src="black.png">';} else str = str + '<img src="">';}
+				
+					}
+					else
+					{
+						str=str+'<td width="70"    height="70" bgcolor="white">'
+					}
+					flag2 = !flag2; 
+					str=str+'</td>';
+				}
+				str=str+'</tr>';
+			}
+			str=str+'</tbody></table>'
+			$('#l1').append(str);
+			flag = false;
+			var select; 
+			$('td').click(function()
+			{   
+				var flag2 =true;
+				if( ($(this).children('img').attr('src')=='white.png') && flag2 )
+				{
+					if (!flag)
+					{
+						$(this).attr('bgcolor','red');
+						select = $(this);
+						flag=true;
+					}	
+					else
+					{
+						if (($(this).attr('bgcolor')=='red'))
+						{
+							$(this).attr('bgcolor','black');
+							flag=false;
+						}
+					}
+														
+				}
+				
+				
+				
+				if (($(this).children('img').attr('src')=='black.png') && flag2 )
+				{
+					if (!flag)
+					{
+						$(this).attr('bgcolor','red');
+						select = $(this);
+						flag=true;
+					}	
+					else
+					{
+						if (($(this).attr('bgcolor')=='red'))
+						{
+							$(this).attr('bgcolor','black');
+							flag=false;
+						}
+					}
+														
+				}
+				else
+				{
+					if (select.children('img').attr('src')=='black.png')
+					{
+						
+						if (flag && ($(this).children('img').attr('src')=="")&&((($(this).attr('id')-select.attr('id'))==-9)||(($(this).attr('id')-select.attr('id'))==-11)))
+						{
+							select.attr('bgcolor','black');
+							flag=false;
+							$(this).children('img').attr('src',select.children('img').attr('src'));
+							select.children('img').attr('src',"");
+							flag2=true;
+							
+						}
+						else
+						{
+						
+							
+							if (flag&& ($(this).children('img').attr('src')=="")&&((($(this).attr('id')-select.attr('id'))==-18)&&($('#'+((+select.attr('id'))-9)).children('img').attr('src')=='white.png')||(($(this).attr('id')-select.attr('id'))==-22&&($('#'+((+select.attr('id'))-11)).children('img').attr('src')=='white.png'))))
+							{
+								select.attr('bgcolor','black');
+								flag=false;
+								$(this).children('img').attr('src',select.children('img').attr('src'));
+								select.children('img').attr('src',"");
+							}
+							else
+							{
+								if(
+							}
+					
+						}
+					}
+				
+					else
+					{
+						if (flag && ($(this).children('img').attr('src')=="")&&((($(this).attr('id')-select.attr('id'))==9)||(($(this).attr('id')-select.attr('id'))==11)))
+						{
+					
+							select.attr('bgcolor','black');
+							flag=false;
+							$(this).children('img').attr('src',select.children('img').attr('src'));
+							select.children('img').attr('src',"");
+							flag2=false;
+						}
+					}
+				}
+				
+				//if (flag && ($(this).children('img').attr('src')==""))
+				
+					
+				//console.log(select);
+				//console.log($('#'+((+select.attr('id'))+9)));
+			});
+		
+		});
+	</script>
+	</body>
+</html>
