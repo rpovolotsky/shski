@@ -41,9 +41,11 @@
 			$('#l1').append(str);
 			flag = false;
 			var select; 
+			var flag2 =true;
 			$('td').click(function()
 			{   
-				var flag2 =true;
+				
+				
 				if( ($(this).children('img').attr('src')=='white.png') && flag2 )
 				{
 					if (!flag)
@@ -65,7 +67,7 @@
 				
 				
 				
-				if (($(this).children('img').attr('src')=='black.png') && flag2 )
+				if (($(this).children('img').attr('src')=='black.png') && (flag2==false) )
 				{
 					if (!flag)
 					{
@@ -83,8 +85,8 @@
 					}
 														
 				}
-				else
-				{
+				
+				
 					if (select.children('img').attr('src')=='black.png')
 					{
 						
@@ -101,16 +103,26 @@
 						{
 						
 							
-							if (flag&& ($(this).children('img').attr('src')=="")&&((($(this).attr('id')-select.attr('id'))==-18)&&($('#'+((+select.attr('id'))-9)).children('img').attr('src')=='white.png')||(($(this).attr('id')-select.attr('id'))==-22&&($('#'+((+select.attr('id'))-11)).children('img').attr('src')=='white.png'))))
+							if (flag&& ($(this).children('img').attr('src')=="")&&((($(this).attr('id')-select.attr('id'))==-18)&&($('#'+((+select.attr('id'))-9)).children('img').attr('src')=='white.png')))
 							{
 								select.attr('bgcolor','black');
 								flag=false;
 								$(this).children('img').attr('src',select.children('img').attr('src'));
+								$('#'+((+select.attr('id'))-9)).children('img').attr('src','');
 								select.children('img').attr('src',"");
+								flag2=true;
 							}
 							else
 							{
-								if(
+								if(flag&& ($(this).children('img').attr('src')=="")&&(($(this).attr('id')-select.attr('id'))==-22&&($('#'+((+select.attr('id'))-11)).children('img').attr('src')=='white.png')))
+								{
+									select.attr('bgcolor','black');
+									flag=false;
+									$(this).children('img').attr('src',select.children('img').attr('src'));
+									$('#'+((+select.attr('id'))-11)).children('img').attr('src','');
+									select.children('img').attr('src',"");
+									flag2=true;
+								}
 							}
 					
 						}
@@ -127,10 +139,39 @@
 							select.children('img').attr('src',"");
 							flag2=false;
 						}
+						else
+						{
+						
+							
+							if (flag&& ($(this).children('img').attr('src')=="")&&((($(this).attr('id')-select.attr('id'))==18)&&($('#'+((+select.attr('id'))+9)).children('img').attr('src')=='black.png')))
+							{
+								select.attr('bgcolor','black');
+								flag=false;
+								$(this).children('img').attr('src',select.children('img').attr('src'));
+								$('#'+((+select.attr('id'))+9)).children('img').attr('src','');
+								select.children('img').attr('src',"");
+								flag2=false;
+							}
+							else
+							{
+								if(flag&& ($(this).children('img').attr('src')=="")&&(($(this).attr('id')-select.attr('id'))==22&&($('#'+((+select.attr('id'))+11)).children('img').attr('src')=='black.png')))
+								{
+									select.attr('bgcolor','black');
+									flag=false;
+									$(this).children('img').attr('src',select.children('img').attr('src'));
+									$('#'+((+select.attr('id'))+11)).children('img').attr('src','');
+									select.children('img').attr('src',"");
+									flag2=false;
+									
+								}
+							}
+					
+						}
+						
 					}
-				}
+			
 				
-				//if (flag && ($(this).children('img').attr('src')==""))
+				
 				
 					
 				//console.log(select);
